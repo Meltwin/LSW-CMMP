@@ -1,0 +1,28 @@
+<div class="fondNoir" id="fondNoir"></div>
+<div class="popup" id="popupPrintSel">
+    <a id="closePopup" class="anormal closePopup" onclick="closePopup();"><span class="glyphicon glyphicon-remove"></span></a>
+    <p>Choisissez la forme pour l'impresssion :</p>
+    <select name="printSel" onchange="printSelect();" id="printSel">
+        <option value="bon">Bons a distribuer</option>
+        <option value="list">Liste</option>
+    </select>
+    <div id="printSelDiv" class="sub"></div>
+    <input type="submit">
+</div>
+<script>
+    function printSelect() {
+        var sel = document.getElementById("printSel");
+        var div = document.getElementById("printSelDiv");
+        if (sel.value == "bon") {
+            div.innerHTML = "<div style='border:1px solid rgb(114, 114, 114);width:220px;padding:5px;text-align:center;'>Cent Milles Milliards de Poèmes<br>Lien : http://example.fr<br>Code : code</div>";
+        }
+        else if (sel.value == "list") {
+            div.innerHTML = "<table class='tStyle'><tr><td>Code</td><td>Membres</td><td>Groupe</td></tr><tr><td>Ex Code</td><td>Ex Membre</td><td>Ex Groupe</td></tr><tr><td>Ex Code 2</td><td>Ex Membre 2</td><td>Ex Groupe 2</td></tr></table>";
+        }
+    }
+    function closePopup() {
+        document.getElementById("popupPrintSel").style.display = "none";
+        document.getElementById("fondNoir").style.display = "none";
+    }
+printSelect();
+</script>

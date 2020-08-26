@@ -1,0 +1,125 @@
+html {
+    height:100%;
+}
+
+body {
+    background-color:rgb(24, 24, 24);
+    font-family: "Trebuchet MS";
+    position: relative;
+    height:100%;
+}
+.ligne {
+    border:0px solid black;
+    border-bottom:1px solid rgba(140, 140, 140, 0.19);
+    background-color: rgba(0,0,0,0);
+    border-bottom-right-radius: 10px;
+    font-size: 25px;
+    min-height: 28px;
+    margin:0px;
+    margin-top:5px;
+    width:100%;
+    text-align: center;
+}
+.cursor {
+    cursor:default;
+}
+.strophe {
+    margin-bottom:7px;
+    padding-bottom:21px;
+    margin-left:10px;
+    margin-right:10px;
+    border-bottom:1px solid rgba(209, 209, 209, 0.23)
+}
+.box {
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+    height:100%;
+    margin-bottom:-34px;
+    width:960px;
+    top:0px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.titre {
+    background-color:#252525;
+    color:#E9E9E9;
+    padding-top:15px;
+    margin-top:0px;
+    top:-26px;
+    position:fixed;
+    width:960px;
+
+}
+h1 {
+    margin-bottom: 0px;
+}
+#menu {
+    background-color:#252525;
+    height: 50px;
+    width:960px;
+    bottom:0px;
+    position:fixed;
+}
+.button {
+    color:#F0F0F0;
+    cursor:pointer;
+}
+.button:hover {
+    color:#9E9E9E;
+}
+table {
+    font-size:30px;
+    position: absolute;
+    left:44%;
+    bottom:1px;
+    text-align:center;
+    padding-left:10px;
+}
+td {
+    padding-right:15px;
+}
+input[type=number] {
+    border:0px;
+    border-bottom:1px solid rgba(140, 140, 140, 0.19);
+    background-color: rgba(0,0,0,0);
+    border-bottom-right-radius: 10px;
+    font-size: 25px;
+}
+input[type=submit], button {
+    border:1px solid #252525;
+    border-radius:5px;
+    height:30px;
+    font-size:18px;
+}
+.submit {
+    position:absolute;
+    bottom:8px;
+    left:43%;
+}
+.submit:hover {
+    background-color:#CECECE;
+}
+.form {
+    height:calc(100% - 148px);
+    position:relative;
+    top:100px;
+    overflow-y:auto;
+}
+#code {
+    top:25vh;
+    position:relative;
+}
+@media only screen and (max-width:962px) {
+    .box {
+        width:100%;
+        margin-left:0px;
+        margin-right: 0px;
+    }
+    #menu {
+        width:100%;
+    }
+    .titre {
+        width:100%;
+    }
+}

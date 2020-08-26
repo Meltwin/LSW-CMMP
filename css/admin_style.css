@@ -1,0 +1,312 @@
+/*
+########################################
+###########      FIXE      #############
+########################################
+*/
+
+body {
+    background-color:rgb(236, 236, 236);
+    color:#E9E9E9;
+    font-family: "Trebuchet MS";
+    overflow:hidden;
+}
+.head {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    z-index: 1;
+    background-color:rgb(24, 24, 24);
+    border-bottom:1px solid rgb(77, 77, 77);
+    float:bottom;
+}
+.titre {
+    margin:20px;
+    margin-left:128px;
+}
+.page {
+    position:absolute;
+    left:100px;
+    top:80px;
+    width:calc(100% - 100px);
+    height:calc(100% - 80px);
+    color:black;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top: 20px;
+    font-size:15px;
+    overflow:auto;
+}
+/* Naviguation */
+nav {
+    height:100%;
+    width:100px;
+    background-color:rgb(24, 24, 24);
+    position:absolute;
+    top:0px;
+    left:0px;
+    border-right:1px solid rgb(77, 77, 77);
+    z-index: 2;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.home {
+    font-size:35px;
+    position:relative;
+    left:31px;
+    top:26px;
+}
+.menu {
+    font-size:28px;
+    position:relative;
+    top:64px;
+    left:36px;
+    margin-bottom:10px;
+}
+.in {
+    padding-bottom:10px;
+    padding-top:10px;
+}
+.mid {
+    border-bottom:3px solid rgb(77, 77, 77);
+}
+/*
+########################################
+###########    Tables     #############
+########################################
+*/
+.tStyle>tbody>tr>td {
+    border-right:1px solid rgba(114, 114, 114, 0.411);
+    border-bottom:1px solid rgba(114, 114, 114, 0.411);
+    text-align: center;
+}
+.tStyle>tbody>tr>td:last-child {
+    border-right:0px;
+}
+.tStyle>tbody>tr:first-child {
+    background-color:rgba(163, 163, 163, 0.479);
+}
+.tStyle>tbody>tr:last-of-type>td {
+    border-bottom:0px;
+}
+table {
+    margin-bottom:10px;
+}
+
+/*
+########################################
+###########    Colonnes    #############
+########################################
+*/
+.grp {
+    width:17vh;
+}
+.code {
+    width:110PX;
+}
+.membre {
+    width:35vh;
+}
+.state {
+    width:133px;
+}
+.action {
+    width:120px;
+}
+.check {
+    width:26px;
+}
+
+/* State */
+.integre  {
+    background-color:rgba(56, 204, 27, 0.651);
+}
+.attente {
+    background-color:rgba(202, 212, 23, 0.678);    
+}
+.edition {
+    background-color:rgba(23, 152, 212, 0.658);    
+}
+.unused {
+    background-color:rgba(226, 226, 226, 0.918);
+}
+.desactive {
+    background-color:rgba(255, 0, 0, 0.678);
+}
+.import {
+    background-color:rgba(136, 49, 235, 0.541);
+}
+
+/*
+########################################
+###########    PopUp     #############
+########################################
+*/
+.popup {
+    position:fixed;
+    top:33vh;
+    left:31vh;
+    width:50vh;
+    background-color:rgb(236, 236, 236);
+    border:1px solid black;
+    text-align: center;
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    padding:15px;
+}
+.popupLarge {
+    position:fixed;
+    top:13vh;
+    left:20vh;
+    width:76vh;
+    background-color:rgb(236, 236, 236);
+    border:1px solid black;
+    text-align: center;
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    padding:15px;
+}
+.closePopup {
+    position: absolute;
+    top:10px;
+    right:15px;
+    cursor:pointer;
+}
+.fondNoir {
+    position:fixed;
+    top:0px;
+    left:0px;
+    background-color:rgba(0, 0, 0, 0.541);
+    height:100%;
+    width:100%;
+    display:none;
+    z-index: 0;
+}
+.sub {
+    margin-top:20px;
+    margin-left:20px;
+    margin-bottom:20px;
+    color:rgb(114, 114, 114);
+    display:flex;
+    justify-content: center;
+}
+
+/*
+########################################
+###########    Pages     #############
+########################################
+*/
+/* Changelog */
+.changeBar {
+    border-bottom:1px solid rgba(114, 114, 114, 0.411);
+    width:95%;
+}
+/* Statistiques */
+.stat {
+    border:1px solid rgb(24, 24, 24,0.75);
+    border-radius:4px;
+    padding-top:10px;
+    background-color:rgb(247, 247, 247);
+    overflow:hidden;
+}
+.statC {
+    width:16%;
+    max-width: 30px;
+    min-width:106px;
+    padding-left:10px;
+    padding-right:10px;
+}
+.statNb {
+    width:10%;
+    min-width: 40px;
+}
+/* Connection */
+.coBody {
+    background-image: url("../admin/connection.jpg");
+    color:rgb(211,211,211);
+}
+.coBox {
+    border:1px solid rgb(49, 49, 49);
+    border-radius:20px;
+    background-color:rgba(24, 24, 24, 0.603);
+    width:490px;
+    text-align:center;
+    position:absolute;
+    left:47%;
+    top:36%;
+}
+.coInner {
+    text-align:left;
+    margin-left:20px;
+    margin-bottom:20px;
+    font-size: 25px;
+}
+.coInput {
+    background-color:rgba(77, 77, 77, 0.034);
+    border:0px;
+    border-bottom:2px solid rgb(114, 114, 114);
+    border-bottom-right-radius: 10px;
+    width:90%;
+    font-size:25px;
+    color:rgb(211,211,211);
+    padding-left:10px;
+    margin-bottom:14px;
+}
+.coSubmit {
+    background-color:rgb(190, 190, 190);
+    margin-bottom:20px;
+    font-size:20px;
+    width:100px;
+    border:1px solid rgb(114, 114, 114);
+    border-radius:5px;
+    color:rgb(94, 94, 94);
+}
+.coSubmit:hover {
+    background-color:rgb(160, 160, 160);
+}
+.coError {
+    background-color:rgba(197, 0, 0, 0.164);
+    margin-left:15px;
+    margin-right:15px;
+    margin-top:-10px;
+    margin-bottom:7px;
+    padding-top:5px;
+    padding-bottom:5px;
+    border:1px solid rgba(184, 85, 85, 0.466);
+}
+/* See Vers */
+.seeVers {
+    width:90%;
+    border:0px;
+    border-bottom:1px solid #42424249;
+    border-bottom-right-radius:5px;
+    background-color:rgba(255, 255, 255, 0);
+}
+
+/*
+########################################
+###########    Balises     #############
+########################################
+*/
+a {
+    color:rgb(56, 56, 56);
+    cursor:pointer;
+}
+nav >table>tbody>tr>td>a, .home>a {
+    color:#E9E9E9;
+    cursor:pointer;
+}
+a:hover {
+    color:#9E9E9E;
+}
+h1 {
+    margin-top:0px;
+}
+button,input[type=submit] {
+    margin-bottom:20px;
+}
+label {
+    font-weight: normal;
+}

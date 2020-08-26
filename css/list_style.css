@@ -1,0 +1,32 @@
+body {
+    font-family: "Trebuchet MS";
+    margin:0px;
+    background-color:rgb(236, 236, 236);
+}
+.header {
+    background-color:#252525;
+    color:#E9E9E9;
+    margin:0px;
+    text-align:center;
+    position:absolute;
+    width:100%;
+}
+.box {
+    position:absolute;
+    top:60px;
+    width:100%;
+}
+.titre {
+    padding-left:10px;
+    background-color:rgba(102, 102, 102, 0.56);
+    color:#E9E9E9;
+    padding-top:7px;
+    padding-bottom:7px;
+    border-bottom-right-radius: 10px;
+    border-bottom:3xp solid black;
+}
+.vers {
+    padding-left:20px;
+    font-style:italic;
+    margin-bottom:5px;
+}

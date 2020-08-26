@@ -1,0 +1,29 @@
+.bon {
+    border:1px solid black;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width:25vh;
+    min-height:1px;;
+    margin:5px;
+    font-size: 13px;
+}
+.printInner {
+    width:100%;
+    display:flex;
+    justify-content: flex-start;
+    flex-wrap:wrap;
+}
+
+@media print {
+    header, nav, p {
+        display:none;
+    }
+    .page {
+        position: absolute;
+        top:0px;
+        left:0px;
+        width:100%;
+    }
+}

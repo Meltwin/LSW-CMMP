@@ -1,0 +1,17 @@
+ErrorDocument 403 ./
+deny from all
+<Files "./">
+allow from all
+</Files>
+<Files "index.php">
+allow from all
+</Files>
+<Files "list.php">
+allow from all
+</Files>
+<Files "save.php">
+allow from all
+</Files>
+<Files "cookie.php">
+allow from all
+</Files>

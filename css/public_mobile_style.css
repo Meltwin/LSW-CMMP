@@ -1,0 +1,18 @@
+@media all and (max-width: 666px) {
+    .ligne {
+        font-size:100%;
+   }
+   h1 {
+       font-size: 160%;
+   }
+   .titre>p {
+        font-size:80%;
+   }
+   .page {
+        height:calc(100% - 17%);
+   }
+   #menu {
+        font-size:170%;
+        height:7%;
+    }
+}

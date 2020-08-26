@@ -1,0 +1,105 @@
+/*
+########################################
+###########      FIXE      #############
+########################################
+*/
+
+html {
+    height:100%;
+}
+body {
+    background-color:rgb(7, 7, 7);
+    font-family: "Trebuchet MS";
+    position: absolute;
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+.box {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: rgb(236, 236, 236);
+    width:960px;
+}
+.page {
+    height:calc(100% - 148px);
+    overflow-y:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top:15px;
+    padding-bottom: 20px;
+}
+.page>form {
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y:auto;
+}
+
+/* Menu */
+#menu {
+    background-color:#252525;
+    height: 50px;
+    bottom:0px;
+    position:relative;
+    display:flex;
+    font-size:30px;
+    justify-content: center;
+    overflow:hidden;
+}
+#menu>div>span, #menu>div>a {
+    color:#F0F0F0;
+    cursor:pointer;
+}
+#menu>div>span:hover, #menu>div>a:hover {
+    color:#9E9E9E;
+}
+#menu>div {
+    margin-right:10px;
+}
+#menu>div:last-child {
+    margin-right:0px;
+}
+#menu>div>span, #menu>div>a>span {
+    margin-top:7px;
+}
+
+/* Titre */
+.titre {
+    background-color:#252525;
+    color:#E9E9E9;
+    padding-top: 9px;
+    margin-top:0px;
+}
+h1 {
+    margin-bottom: 0px;
+    margin-top:0px;
+}
+/*
+########################################
+###########    Pages     #############
+########################################
+*/
+/* Main */
+.ligne {
+    border:0px solid black;
+    border-bottom:1px solid rgba(140, 140, 140, 0.19);
+    background-color: rgba(0,0,0,0);
+    border-bottom-right-radius: 10px;
+    font-size: 25px;
+    min-height: 28px;
+    margin:0px;
+    margin-top:5px;
+    width:100%;
+    text-align: center;
+}
+
+/* New */
+#menu>div>button, #menu>div>input {
+    font-size:15px;
+    text-align: center;
+}
