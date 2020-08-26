@@ -30,7 +30,7 @@
                     break;
                 case "bon":
                     foreach($_POST as $key => $value) {
-                        echo '<div class="bon"><div>Projet LSW42 - Collège P&M Curie</div><div><strong>Lien :</strong> https://orchitic-solenoid.000webhostapp.com/Haiku/</div><div><strong>Code :</strong> '.$key.'</div></div>';
+                        echo '<div class="bon"><div>Projet LSW42 - Collège P&M Curie</div><div><strong>Lien :</strong>www.meltwin.fr/sites/Haiku/</div><div><strong>Code :</strong> '.$key.'</div></div>';
                     }
                     break;
             }

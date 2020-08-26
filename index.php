@@ -1,9 +1,8 @@
 <?php
     session_start();
-    if (isset($_SESSION["connect"])) {
-        unset($_SESSION["connect"]);
-        unset($_SESSION["username"]);
+    if (isset($_GET["logout"])) {
         session_destroy();
+        header("Location : ./");
     }
     $config = file_get_contents('admin/private/config.json');
     $config = json_decode($config,true);
@@ -27,7 +26,7 @@
             if ($donnee[0]["state"] == 0) {
                 $req = $bdd->prepare("UPDATE cmmp_code SET state = 1 WHERE id = ? ");
                 $req->execute(array($donnee[0]["id"]));
-                setcookie("code",$code, time()+2*3600, null, null, false, true);
+                setcookie("code",$code, time()+365*24*3600, null, null, false, true);
                 $passRedi = "true";
             }
         }
@@ -42,6 +41,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/public_style.css">
     <link rel="stylesheet" href="css/public_mobile_style.css">
+    <link rel="icon" href="./favicon.png">
 </head>
 <body>
     
@@ -68,12 +68,15 @@
                         
                         break;
                     case "pass":
-                    if (!isset($_COOKIE["code"])) {
-                        include 'access.php';
-                    }
-                    else {
-                        $passRedi = "true";
-                    }
+                        if (!isset($_COOKIE["code"])) {
+                            include 'access.php';
+                        }
+                        else {
+                            $passRedi = "true";
+                        }
+                        break;
+                    case "qr":
+                        include 'qrCode.php';
                         break;
                 }
             }

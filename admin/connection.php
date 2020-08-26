@@ -5,14 +5,19 @@
         $handle = file("private/user.txt");
         $state = false;
         foreach ($handle as $key => $value) {
-            $handle[$key] = explode(":",$value);
-            $handle[$key][1] = preg_replace("#(\r\n)#","", $handle[$key][1]);
-            if (($_POST["username"] == $handle[$key][0]) && ($_POST["password"] == $handle[$key][1])) {
+            $h = explode(":",$value);
+            $h[1] = substr($h[1],0,-1);
+            if (($_POST["username"] == $h[0]) && ($_POST["password"] == $h[1])) {
                 $_SESSION["connect"] = "set";
                 $_SESSION["user"] = $_POST["username"];
                 $state = true;
-                header("Location:./");
+                ?>
+                    <script>
+                        document.location.href="./";
+                    </script>
+                <?php
             }
+            var_dump($h);
         }
     }
 ?>

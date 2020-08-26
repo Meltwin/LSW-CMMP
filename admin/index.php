@@ -17,7 +17,7 @@
 </head>
 <body>
     <nav>
-        <div class="home" title="Revenir au site"><a href="../"><span class="glyphicon glyphicon-off"></span></a></div>
+        <div class="home" title="Revenir au site"><a href="../?logout=true"><span class="glyphicon glyphicon-off"></span></a></div>
         <table class="menu">
             <tr>
                 <td class="in mid"><a href="./" title="Retourner a l'accueil"><span class="glyphicon glyphicon-home"></span></a></td>
@@ -129,11 +129,84 @@
                 $nbCodeA = $bdd->query('SELECT COUNT(*) FROM cmmp_code WHERE state = 2'); $nbCodeA = $nbCodeA->fetchAll()[0][0];
                 $nbCodeI = $bdd->query('SELECT COUNT(*) FROM cmmp_code WHERE state >= 3'); $nbCodeI = $nbCodeI->fetchAll()[0][0];
                 $nbVers= $bdd->query('SELECT COUNT(*) FROM cmmp_vers'); $nbVers = $nbVers->fetchAll()[0][0];
-                $nbGrp = $bdd->query('SELECT COUNT(*) FROM cmmp_groups'); $nbGrp = $nbGrp->fetchAll()[0][0];
+                $nbGrp = $bdd->query('SELECT COUNT(*) FROM cmmp_groups'); $nbGrp = $nbGrp->fetchAll()[0][0] - 2;
+
+                $combi = pow($nbCodeA+$nbCodeI,12);
+                $combiText = $combi;
+                if ($combi >= pow(10,60)) {
+                    $combi = number_format($combi/pow(10,60),3)."x10<sup>60</sup>";
+                } else if ($combi >= pow(10,57)) {
+                    $combi = number_format($combi/pow(10,57),3)."x10<sup>57</sup>";
+                }else if ($combi >= pow(10,54)) {
+                    $combi = number_format($combi/pow(10,54),3)."x10<sup>54</sup>";
+                }else if ($combi >= pow(10,51)) {
+                    $combi = number_format($combi/pow(10,51),3)."x10<sup>51</sup>";
+                }else if ($combi >= pow(10,48)) {
+                    $combi = number_format($combi/pow(10,48),3)."x10<sup>5748</sup>";
+                }else if ($combi >= pow(10,45)) {
+                    $combi = number_format($combi/pow(10,45),3)."x10<sup>45</sup>";
+                }else if ($combi >= pow(10,42)) {
+                    $combi = number_format($combi/pow(10,42),3)."x10<sup>42</sup>";
+                }else if ($combi >= pow(10,39)) {
+                    $combi = number_format($combi/pow(10,39),3)."x10<sup>39</sup>";
+                }else if ($combi >= pow(10,36)) {
+                    $combi = number_format($combi/pow(10,36),3)."x10<sup>36</sup>";
+                }else if ($combi >= pow(10,33)) {
+                    $combi = number_format($combi/pow(10,33),3)."x10<sup>33</sup>";
+                }else if ($combi >= pow(10,30)) {
+                    $combi = number_format($combi/pow(10,30),3)."x10<sup>30</sup>";
+                }else if ($combi >= pow(10,27)) {
+                    $combi = number_format($combi/pow(10,27),3)."x10<sup>27</sup>";
+                }else if ($combi >= pow(10,24)) {
+                    $combi = number_format($combi/pow(10,24),3)."x10<sup>24</sup>";
+                }else if ($combi >= pow(10,21)) {
+                    $combi = number_format($combi/pow(10,21),3)."x10<sup>21</sup>";
+                }else if ($combi >= pow(10,18)) {
+                    $combi = number_format($combi/pow(10,18),3)."x10<sup>18</sup>";
+                }else if ($combi >= pow(10,15)) {
+                    $combi = number_format($combi/pow(10,15),3)."x10<sup>15</sup>";
+                }else if ($combi >= pow(10,12)) {
+                    $combi = number_format($combi/pow(10,12),3)."x10<sup>12</sup>";
+                }else if ($combi >= pow(10,9)) {
+                    $combi = number_format($combi/pow(10,9),3)."x10<sup>9</sup>";
+                }else if ($combi >= pow(10,6)) {
+                    $combi = number_format($combi/pow(10,6),3)."x10<sup>6</sup>";
+                }else if ($combi >= pow(10,3)) {
+                    $combi = number_format($combi/pow(10,3),3)."x10<sup>3</sup>";
+                }
+                $text = "";
+                while ($combiText >= pow(10,3)) {
+                    if ($combiText >= pow(10,9)) {
+                        $combiText = $combiText/pow(10,9);
+                        if (strlen($text) == 0) {
+                            $text = "milliards".$text;
+                        }
+                        else {
+                            $text = "milliards de ".$text;
+                        }
+                    }else if ($combiText >= pow(10,6)) {
+                        $combiText = $combiText/pow(10,6);
+                        if (strlen($text) == 0) {
+                            $text = "millions".$text;
+                        }
+                        else {
+                            $text = "millions de ".$text;
+                        }
+                    }else if ($combiText >= pow(10,3)) {
+                        $combiText = $combiText/pow(10,3);
+                        if (strlen($text) == 0) {
+                            $text = "milliards".$text;
+                        }
+                        else {
+                            $text = "milliers de ".$text;
+                        }
+                    }
+                }
+                $text = number_format($combiText,3)." ".$text;
                 ?>
                 <ul>
                     <li>Nombre de vers : <?=$nbVers?></li>
-                    <li>Nombre de combinaisons : <?php echo pow($nbCode,14);?></li>
+                    <li>Nombre de combinaisons : <?=$nbCodeA+$nbCodeI?><sup>12</sup> = <?=$combi?><br>Soit : <strong><i><?=$text?></i></strong> de combinaisons</li>
                     <li style="float:none;">Nombre de groupes : <?=$nbGrp?></li>
                     <li style="float:left;width:42%;">Nombre de code : 
                         <table class="tStyle">

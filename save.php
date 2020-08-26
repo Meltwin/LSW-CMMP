@@ -1,5 +1,7 @@
 <?php
     include 'admin/private/bddIni.php';
+    $config = file_get_contents('admin/private/config.json');
+    $config = json_decode($config,true);
     $code = $_COOKIE["code"];
     $req = $bdd->prepare('SELECT * FROM cmmp_code WHERE code = ?');
     $req->execute(array($code));
@@ -8,7 +10,7 @@
         setcookie("reset","y",time()+3600, null, null, false, true);
         var_dump($_POST);
         $req = $bdd->prepare('INSERT INTO cmmp_vers(code,contenu,n_vers) VALUES(:code,:contenu,:ligne)');
-        for ($i=1;$i<=14;$i++) {
+        for ($i=1;$i<=$config["nbV"];$i++) {
             $contenu = $_POST["ligne".$i];
             $req->execute(array('code'=>$code,'contenu'=>$contenu,'ligne'=>$i));
         }

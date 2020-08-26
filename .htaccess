@@ -15,3 +15,15 @@ allow from all
 <Files "cookie.php">
 allow from all
 </Files>
+<Files "qrCode.png">
+allow from all
+</Files>
+<Files "recup.php">
+allow from all
+</Files>
+<Files "favicon.png">
+allow from all
+</Files>
+<Files "Haikus.apk">
+allow from all
+</Files>
